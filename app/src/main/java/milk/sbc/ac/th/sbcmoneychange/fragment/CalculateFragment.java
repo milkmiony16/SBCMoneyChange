@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,40 @@ import milk.sbc.ac.th.sbcmoneychange.R;
  */
 
 public class CalculateFragment extends Fragment{
+    private double aDouble;
+
+
+    public static CalculateFragment calculateInstance(double factorDouble) {
+
+        CalculateFragment calculateFragment = new CalculateFragment();
+        Bundle bundle = new Bundle();
+        bundle.putDouble("Factor",factorDouble);
+        calculateFragment.setArguments(bundle);
+
+        return calculateFragment;
+    }
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 //        Toolbar Controller
+        toolbarController();
+
+//        get value form argument
+        aDouble = getArguments().getDouble("Factor");
+        Log.d("13Jan", "Factor ==>" + aDouble);
+
+
+
+
+
+
+
+    } //Main Method
+
+    private void toolbarController() {
         Toolbar toolbar = getView().findViewById(R.id.toobarCalculate);
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
 
@@ -31,7 +61,7 @@ public class CalculateFragment extends Fragment{
         ((MainActivity) getActivity()).getSupportActionBar()
                 .setSubtitle(getString(R.string.th_sub_exchange));
         ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
-            ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,15 +69,7 @@ public class CalculateFragment extends Fragment{
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
-
-
-
-
-
-
-
-
-    } //Main Method
+    }
 
     @Nullable
     @Override
