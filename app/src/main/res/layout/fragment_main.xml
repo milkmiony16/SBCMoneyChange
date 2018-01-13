@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+   <LinearLayout
+       android:padding="35dp"
+       android:layout_margin="30dp"
+       android:background="#82ffffff"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
     <!--Logo-->
     <ImageView
         android:layout_marginTop="30dp"
@@ -14,7 +22,7 @@
 
     <!--Add Name-->
     <TextView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:textColor="@color/colorAccent"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
@@ -56,6 +64,13 @@
         android:layout_height="wrap_content" />
 
     <!--Button Cal-->
-
+    <Button
+        android:id="@+id/btnCalculate"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="CALCULATE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   </LinearLayout>
 
 </LinearLayout>
