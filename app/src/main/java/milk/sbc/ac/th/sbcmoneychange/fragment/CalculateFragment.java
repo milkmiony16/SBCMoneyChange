@@ -33,12 +33,7 @@ public class CalculateFragment extends Fragment{
         ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
             ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    getActivity().getSupportFragmentManager().popBackStack();
-                }
-            });
+
 
 
 
